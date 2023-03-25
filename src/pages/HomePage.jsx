@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import LocalStorage from 'sync-storage'
 import { increment, decrement, store } from '../store/index'
 import { useDispatch, useSelector } from 'react-redux'
+import {ImageSlider} from 'react-native-image-slider-banner'
 
 // page
 const HomePage = () => {
@@ -35,8 +36,23 @@ const HomePage = () => {
         getFirstData()
     }, [])
 
+    const images = [
+        {
+            img: 'https://source.unsplash.com/1024x768/?nature'
+        },
+        {
+            img: 'https://source.unsplash.com/1024x768/?water'
+        },
+        {
+            img: 'https://source.unsplash.com/1024x768/?girl'
+        },
+        {
+            img: 'https://source.unsplash.com/1024x768/?tree'
+        }
+      ]
     return (
         <View>
+            <ImageSlider data={images} autoPlay={true} timer={5000}/>
             <View style={style.button}>
                 <Button title='-' color='orange' onPress={() => decrementState()} />
                 <Text>
