@@ -1,16 +1,12 @@
 // imports
 import { View, Text, Alert, Button, StyleSheet } from 'react-native'
 import { useEffect, useState } from 'react'
-import LocalStorage from 'sync-storage'
 import { increment, decrement, store } from '../store/index'
 import { useDispatch, useSelector } from 'react-redux'
 import {ImageSlider} from 'react-native-image-slider-banner'
 
 // page
 const HomePage = () => {
-    // data
-    let [result, setResult] = useState(null)
-
     // store data
     const dispatch = useDispatch()
 
@@ -18,10 +14,6 @@ const HomePage = () => {
     const state_counter = useSelector((state) => state.counter.value)
 
     // methods
-    async function getFirstData() {
-        await LocalStorage.set('use', '10')
-        setResult(LocalStorage.get('use'))
-    }
 
     function incrementState() {
         dispatch(increment())
@@ -30,11 +22,6 @@ const HomePage = () => {
     function decrementState() {
         dispatch(decrement())
     }
-
-    // mounted
-    useEffect(() => {
-        getFirstData()
-    }, [])
 
     const images = [
         {
