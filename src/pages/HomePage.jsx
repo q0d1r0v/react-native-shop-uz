@@ -1,6 +1,9 @@
 // imports
 import { View, Text, Alert, Button, StyleSheet } from 'react-native'
+<<<<<<< HEAD
 import { useEffect, useState } from 'react'
+=======
+>>>>>>> 51b6943 (shop-uz)
 import { increment, decrement, store } from '../store/index'
 import { useDispatch, useSelector } from 'react-redux'
 import {ImageSlider} from 'react-native-image-slider-banner'
