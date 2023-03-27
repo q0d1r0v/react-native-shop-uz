@@ -1,9 +1,9 @@
 // imports
-import { View, Text, StyleSheet, TextInput, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, TextInput, ScrollView, Alert } from 'react-native'
 import { increment, decrement, store } from '../store/index'
 import { useDispatch, useSelector } from 'react-redux'
 import { ImageSlider } from 'react-native-image-slider-banner'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // page
 const HomePage = () => {
@@ -41,6 +41,15 @@ const HomePage = () => {
     function searchItemOfItems() {
         console.log('you are searched')
     }
+
+    function showNotification() {
+        Alert.alert('created')
+    }
+
+    // mounted
+    useEffect(() => {
+        showNotification()
+    },[])
 
     // elements
     const ItemBoxes = () => {
